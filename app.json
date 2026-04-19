@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "VoiceIME",
+    "slug": "voice-ime",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0a0a0a"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.prototype.voiceime",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "VoiceIME needs your microphone to transcribe speech.",
+        "NSSpeechRecognitionUsageDescription": "VoiceIME uses on-device speech recognition to transcribe what you say."
+      }
+    },
+    "android": {
+      "package": "com.prototype.voiceime",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0a0a0a"
+      },
+      "permissions": ["RECORD_AUDIO", "INTERNET"]
+    },
+    "plugins": [
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Allow VoiceIME to use the microphone.",
+          "speechRecognitionPermission": "Allow VoiceIME to use speech recognition.",
+          "androidSpeechServicePackages": ["com.google.android.googlequicksearchbox"]
+        }
+      ],
+      "expo-secure-store",
+      "react-native-reanimated"
+    ]
+  }
+}
